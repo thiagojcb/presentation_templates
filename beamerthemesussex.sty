@@ -1,14 +1,31 @@
 \mode<presentation>
 
 \newif\if@Nova
+\newif\if@Dune
 \@Novafalse
+\@Dunefalse
 \DeclareOption{nova}{\@Novatrue}
+\DeclareOption{dune}{\@Dunetrue}
+
 \ProcessOptions
 
-\newif\if@Dune
-\@Dunefalse
-\DeclareOption{dune}{\@Dunetrue}
-\ProcessOptions
+\newcommand*{\mystrcmp}[2]{%
+  \expandafter\pdf@strcmp\expandafter{#1}{#2}%
+}
+
+\newcommand{\experimentlogo}{none}
+\if@Nova
+  \typeout{Setting the experiment to nova}
+  \renewcommand\experimentlogo{NOvALogoWhite.png}
+\else
+  \if@Dune
+    \typeout{Setting the experiment to dune}
+    \renewcommand\experimentlogo{dune_logo.png}
+  \else
+    \typeout{Setting the experiment to none}
+  \fi
+\fi
+\typeout{The experiment logo is \experimentlogo}
 
 % Requirement
 \RequirePackage{tikz}
@@ -29,8 +46,6 @@
 \setbeamertemplate{blocks}
 
 \setbeamertemplate{headline}{}
-% \addtobeamertemplate{frametitle}{\vspace*{-0.9\baselineskip}}{}
-% \addtobeamertemplate{background}{\vspace*{-0.9\baselineskip}}{}
 
 \setbeamercolor{itemize item}{fg=sussexflint}
 \setbeamercolor{itemize subitem}{fg=sussexflint}

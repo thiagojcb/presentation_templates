@@ -7,13 +7,7 @@
     \useasboundingbox[fill=sussexflint](-1,0) rectangle(\the\paperwidth,1.2cm);
     \fill[sussexflint] (0,0) rectangle(\paperwidth,1.4);
     {\node[anchor=west] at (0.01\paperwidth,0.61){\includegraphics[height=1.2cm,keepaspectratio, trim=1.5cm 1.5cm 1.5cm 1.5cm, clip]{sussex_logo.png}};}
-    % \ifbool\@Nova%
-    %   {\node[anchor=east] at (0.99\paperwidth,0.66){\includegraphics[height=1.2cm,keepaspectratio]{NOvALogoWhite.png}};}
-    % \else%
-    %   \ifbool\@Dune
-    {\node[anchor=east] at (0.99\paperwidth,0.66){\includegraphics[height=1cm,keepaspectratio]{dune_logo.png}};}
-    %   \fi%
-    % \fi%
+    \expandafter\ifstrequal\expandafter{\experimentlogo}{none}{}{\node[anchor=east] at (0.99\paperwidth,0.66){\includegraphics[height=1cm,keepaspectratio]{\experimentlogo}};}
   \end{tikzpicture}
 \end{beamercolorbox}
 }

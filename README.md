@@ -26,9 +26,17 @@ If that doesn't work... I don't know, you're on your own, goodluck.
 ## Usage
 The only thing you need to do is:
 
+```\usetheme[dune]{sussex}```
+
+or 
+
+```\usetheme[nova]{sussex}```
+
+or 
+
 ```\usetheme{sussex}```
 
-before the `\begin{document}`.
+before the `\begin{document}`, to get the DUNE, NOvA or no logo, respectively.
 
 ## Example
 There is an example in `example`.
