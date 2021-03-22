@@ -1,0 +1,47 @@
+\mode<presentation>
+
+\newif\if@Nova
+\@Novafalse
+\DeclareOption{nova}{\@Novatrue}
+\ProcessOptions
+
+\newif\if@Dune
+\@Dunefalse
+\DeclareOption{dune}{\@Dunetrue}
+\ProcessOptions
+
+% Requirement
+\RequirePackage{tikz}
+\RequirePackage{hyperref}
+\RequirePackage{listings}
+% settings
+\useinnertheme{sussex}
+\useoutertheme{sussex}
+\usecolortheme{sussex}
+\hypersetup{
+  colorlinks=true,
+  allcolors=black,
+  urlcolor=blue,
+}
+
+
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{blocks}
+
+\setbeamertemplate{headline}{}
+% \addtobeamertemplate{frametitle}{\vspace*{-0.9\baselineskip}}{}
+% \addtobeamertemplate{background}{\vspace*{-0.9\baselineskip}}{}
+
+\setbeamercolor{itemize item}{fg=sussexflint}
+\setbeamercolor{itemize subitem}{fg=sussexflint}
+\setbeamercolor{itemize subsubitem}{fg=sussexflint}
+\setbeamercolor{itemize subsubsubitem}{fg=sussexflint}
+\lstset{language=C++,
+  basicstyle=\footnotesize\ttfamily,
+  keywordstyle=\color{sussexflint}\ttfamily,
+  stringstyle=\color{red}\ttfamily,
+  commentstyle=\color{green}\ttfamily,
+  emph={int,char,double,float,unsigned}\ttfamily,
+  emphstyle=\color{blue}\ttfamily
+}
+\mode<all>

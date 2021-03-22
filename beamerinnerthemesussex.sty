@@ -1,0 +1,47 @@
+\mode<presentation>
+
+\setbeamertemplate{background}
+{
+\begin{beamercolorbox}[wd=\paperwidth,ht=1.2cm]{frametitle}
+  \begin{tikzpicture}
+    \useasboundingbox[fill=sussexflint](-1,0) rectangle(\the\paperwidth,1.2cm);
+    \fill[sussexflint] (0,0) rectangle(\paperwidth,1.4);
+    {\node[anchor=west] at (0.01\paperwidth,0.61){\includegraphics[height=1.2cm,keepaspectratio, trim=1.5cm 1.5cm 1.5cm 1.5cm, clip]{sussex_logo.png}};}
+    % \ifbool\@Nova%
+      {\node[anchor=east] at (0.99\paperwidth,0.66){\includegraphics[height=1.2cm,keepaspectratio]{NOvALogoWhite.png}};}
+    % \else%
+    %   \ifbool\@Dune
+    %      {\node[anchor=east] at (0.99\paperwidth,0.66){\includegraphics[height=1cm,keepaspectratio]{dune_logo.png}};}
+    %   \fi%
+    % \fi%
+  \end{tikzpicture}
+\end{beamercolorbox}
+}
+
+\defbeamertemplate{subsection in toc}{bullets}{%
+  \leavevmode
+  \parbox[t]{1em}{\textbullet\hfill}%
+  \parbox[t]{\dimexpr\textwidth-1em\relax}{\inserttocsubsection}\par}
+
+\defbeamertemplate{section in toc}{sections numbered roman}{%
+  \leavevmode%
+  \textcolor{sussexflint}{\inserttocsectionnumber.}\ %
+  \inserttocsection\par}
+
+\setbeamertemplate{section in toc}[sections numbered roman]
+\setbeamertemplate{subsection in toc}[bullets]
+
+% Title page
+\defbeamertemplate*{title page}{sussex}[1][]{
+\begin{beamercolorbox}[wd=\paperwidth,ht=\paperheight]{frame}%
+  \begin{tikzpicture}
+    \useasboundingbox(0,0) rectangle(\the\paperwidth,\the\paperheight);
+    {\node[anchor=center, black, font=\LARGE] at (0.5\paperwidth,0.5\paperheight){\usebeamerfont{title}\inserttitle\par};}
+    {\node[anchor=center, black] at (0.5\paperwidth,0.2\paperheight){\usebeamerfont{author}\insertauthor};}
+    {\node[anchor=center, black] at (0.5\paperwidth,0.1\paperheight){\usebeamerfont{author}\insertdate};}
+  \end{tikzpicture}
+\end{beamercolorbox}
+}
+
+\mode
+<all>

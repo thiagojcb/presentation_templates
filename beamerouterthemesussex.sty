@@ -1,0 +1,36 @@
+\mode<presentation>
+
+% Frame title
+\defbeamertemplate*{frametitle}{sussexheader}[1][]
+{
+\vspace{-0.2cm}
+\begin{beamercolorbox}[wd=\paperwidth,ht=1.4cm]{frametitle}
+  \begin{tikzpicture}
+  \useasboundingbox(0,0) rectangle(\the\paperwidth,1.2cm);
+  \ifx\insertframesubtitle\@empty%
+    {\node[anchor=center, sussexwhite,font=\LARGE] at (0.5\paperwidth,0.66){\insertframetitle};}
+  \else%
+    {\node[anchor=center, sussexwhite,font=\large] at (0.5\paperwidth,0.81){\insertframetitle};%
+    \node[anchor=center, sussexwhite,font=\small] at (0.5\paperwidth,0.41){\insertframesubtitle};}%
+  \fi
+  \end{tikzpicture}
+\end{beamercolorbox}
+}
+%
+\mode<all>
+\defbeamertemplate*{footline}{sussexfooter}
+{
+\leavevmode%
+\begin{beamercolorbox}[wd=\paperwidth,ht=0.5cm]{footline}%
+  \begin{tikzpicture}
+    \useasboundingbox(0,0) rectangle(\the\paperwidth,0.5cm);
+    \fill[sussexflint](0,0) rectangle(\paperwidth,0.5);
+    \ifnum \insertpagenumber>1
+      {\node[anchor=west, sussexwhite, font=\footnotesize] at (0.05\paperwidth,0.3){\insertauthor};}
+      {\node[anchor=center, sussexwhite, font=\footnotesize] at (0.5\paperwidth,0.3){\inserttitle};}
+      {\node[anchor=east, sussexwhite, font=\footnotesize] at (0.95\paperwidth,0.3){\thepage/\inserttotalframenumber};}
+    \fi
+  \end{tikzpicture}
+\end{beamercolorbox}
+\vspace{-0.1cm}
+}
