@@ -32,3 +32,13 @@ before the `\begin{document}`.
 
 ## Example
 There is an example in `example`.
+
+## Wait I want to use it for NOvA/some other experiment!
+Around line 11 of `beamerinnerthemesussex.sty` is where the choice for the logo is made. You can uncomment the logo you need there...
+
+## Contribute
+You can contribute if you want, probably the best would be to create a branch and commit your modifications on there before we include them in the main branch.
+
+TODO:
+- Modify the `beamerinnerthemesussex.sty` to allow toggling between DUNE/NOvA
+- Make the logo a variable such that somebody can use a different logo (SNO+ or anything else)
