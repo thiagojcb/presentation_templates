@@ -2,10 +2,13 @@
 
 \newif\if@Nova
 \newif\if@Dune
+\newif\if@Snop
 \@Novafalse
 \@Dunefalse
+\@Snopfalse
 \DeclareOption{nova}{\@Novatrue}
 \DeclareOption{dune}{\@Dunetrue}
+\DeclareOption{snop}{\@Snoptrue}
 
 \ProcessOptions
 
@@ -22,7 +25,12 @@
     \typeout{Setting the experiment to dune}
     \renewcommand\experimentlogo{dune_logo.png}
   \else
-    \typeout{Setting the experiment to none}
+    \if@Snop
+      \typeout{Setting the experiment to snop}
+      \renewcommand\experimentlogo{SNOp_logo.png}
+    \else
+      \typeout{Setting the experiment to none}
+    \fi
   \fi
 \fi
 \typeout{The experiment logo is \experimentlogo}
